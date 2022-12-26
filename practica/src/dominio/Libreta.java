@@ -9,7 +9,7 @@ public class Libreta{
 	public ArrayList<Pasteleria> getLibreta(){
 		return libreta;
 	}
-	public void setLibreta(ArrayList<Pasteleria> libreta){
+	public void setPateleria(ArrayList<Pasteleria> libreta){
 
 		this.libreta = libreta;
 	}

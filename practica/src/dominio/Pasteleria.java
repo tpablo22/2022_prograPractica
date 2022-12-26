@@ -55,10 +55,5 @@ public class Pasteleria{
 		return id + reposteria + cliente + precio;
 	}
 
-	public void add(Pasteleria libreta) {
-	}
-
-	public void remove(Pasteleria libreta) {
-	}
 }
 
