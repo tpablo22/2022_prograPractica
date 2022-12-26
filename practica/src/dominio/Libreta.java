@@ -4,36 +4,48 @@ import java.util.ArrayList;
 
 public class Libreta{
 
-	private ArrayList<Libreta> libreta = new ArrayList<>();
+	private ArrayList<Pasteleria> libreta = new ArrayList<>();
 
-	public ArrayList<Libreta> getLibreta(){
+	public ArrayList<Pasteleria> getLibreta(){
 		return libreta;
 	}
-	public void setLibreta(ArrayList<Libreta> libreta){
+	public void setLibreta(ArrayList<Pasteleria> libreta){
 
 		this.libreta = libreta;
 	}
-	public void addLibreta(Pasteleria libreta){
+	public void addPateleria(Pasteleria libreta){
 		libreta.add(libreta);
 	}
-	public void eliminarLibreta(Pasteleria libreta){
+	public void eliminarPasteleria(Pasteleria libreta){
 		libreta.remove(libreta);
 	}
 		
 	public String toString(){
-		String mensaje = "";
-		for(int i = 0; i < libreta.size(); i++){
-			mensaje += libreta.get(i) + "\n";
-		}
-		return mensaje;
-	}
-	public String toCSV(){
 		StringBuilder mensaje = new StringBuilder();
-		for(Libreta libreta: libreta){
-			
+		if(libreta.size() == 0){
+			mensaje.append("La libreta está vacía");
+		} else {
+			for(Pasteleria libreta: libreta){
+				mensaje.append(libreta).append("\n");
+			}
 		}
 		return mensaje.toString();
 
+	}
+
+	public String toCSV(){
+			StringBuilder mensaje = new StringBuilder();
+			mensaje.append("id,reposteria,cliente,precio,\n");
+			for(Pasteleria libreta: libreta){
+				mensaje.append(libreta.toCSV()).append("\n");
+			}
+			return mensaje.toString();
+
+		}
+
+
 		
 	}
-}
+
+
+

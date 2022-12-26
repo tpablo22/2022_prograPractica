@@ -2,6 +2,13 @@ package dominio;
 
 public class Pasteleria{
 
+	public Pasteleria(int id, String reposteria, String cliente, int precio){
+		this.id = id;
+		this.reposteria = reposteria;
+		this.cliente = cliente;
+		this.precio = precio;
+	}
+
 	private int id;
 	private String reposteria;
 	private String cliente;

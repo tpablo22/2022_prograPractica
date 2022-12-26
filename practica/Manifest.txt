@@ -1,2 +1,2 @@
 Main-Class: aplicacion.Principal
-
+Class-Path: lib/jOpenDocument-1.0.jar
