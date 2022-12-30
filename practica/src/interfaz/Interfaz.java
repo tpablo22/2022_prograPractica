@@ -1,5 +1,5 @@
 package interfaz;
-
+import java.util.Scanner;
 import dominio.*;
 
 import java.io.FileWriter;
@@ -39,6 +39,7 @@ public class Interfaz {
 			System.out.println("La Pasteleria tiene los siguientes productos: \n");
 			System.out.println(libreta);
 
+
 		} else if (linea[0].equals("help")) {
 
 			printHelp();
@@ -51,10 +52,40 @@ public class Interfaz {
 		}
 	}
 	private static void guardarLibreta(Libreta libreta){
+		try{
+			FileWriter fw = new FileWriter(libretaPas);
+			fw.write(libreta.toString());
+			fw.close();
+			System.out.println("La libreta ha sido guardada");
+		}catch(IOException e){
+			System.out.println("Ha habido un error al guardar el fichero");
+		}
+
+
+
 
 
 	}
 	private static Libreta inicializarLibreta(){
+
+		libreta libreta = new libreta();
+		try{
+			file file = new File(libretaPas);
+			Scanner sc = new Scanner(file);
+			while(sc.hasNext()){
+				String id = sc.next();
+				String reposteria = sc.next();
+				String cliente = sc.next();
+				String precio = sc.next();
+				Pasteleria pasteleria = new Pasteleria (id, reposteria, cliente, precio);
+				libreta.anadirPasteleria(contacto);
+			}
+			sc.close();
+		}catch (fileNotFoundException e){
+		}
+		return libreta;
+
+
 
 
 	}
@@ -66,7 +97,7 @@ public class Interfaz {
 				"       Usando el id como intruccion para que se borre el elemento\n" +
 				"---> 'edit' para editar un elemento a la libreta:\n" +
 				"       Usando el id como intruccion para que se borre el elemento\n"+
-				"		despues se añade el nuevo elemento a la libreta (id, reposteria, cliente, precio)\n"
+				"		despues se añade el nuevo elemento a la libreta (id, reposteria, cliente, precio)\n"+
 				"---> 'help' para mostrar la guia de nuevo: \n" +
 				"---> 'generar' para eliminar un elemento a la libreta:\n"+
 				"---> 'exit' para salir de la libreta:\n";
