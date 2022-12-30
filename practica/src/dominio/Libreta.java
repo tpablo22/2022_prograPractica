@@ -13,7 +13,7 @@ public class Libreta{
 
 		this.pasteleria = libreta;
 	}
-	public void addPasteleria(Pasteleria libreta){
+	public static void addPasteleria(Pasteleria libreta){
 		libreta.add(libreta);
 	}
 	public void eliminarPasteleria(Pasteleria libreta){
@@ -31,8 +31,8 @@ public class Libreta{
 		
 	public String toString(){
 		String mensaje = "";
-		for(int i = 0; i < libreta.size(); i++){
-			mensaje += libreta.get(i) + "\n";
+		for(int i = 0; i < pasteleria.size(); i++){
+			mensaje += pasteleria.get(i) + "\n";
 		}
 		return mensaje;
 	}

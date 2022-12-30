@@ -4,6 +4,8 @@ import dominio.*;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Interfaz {
 
@@ -66,22 +68,24 @@ public class Interfaz {
 
 
 	}
-	private static Libreta inicializarLibreta(){
+	private static 	Libreta inicializarLibreta(){
 
-		libreta libreta = new libreta();
+		Libreta libreta = new Libreta();
 		try{
-			file file = new File(libretaPas);
+			File file = new File(libretaPas);
 			Scanner sc = new Scanner(file);
 			while(sc.hasNext()){
 				String id = sc.next();
 				String reposteria = sc.next();
 				String cliente = sc.next();
 				String precio = sc.next();
-				Pasteleria pasteleria = new Pasteleria (id, reposteria, cliente, precio);
-				libreta.anadirPasteleria(contacto);
+				Pasteleria pasteleria = new Pasteleria (Integer.parseInt(id), reposteria, cliente, Integer.parseInt(precio));
+				Libreta.addPasteleria(pasteleria);
 			}
 			sc.close();
-		}catch (fileNotFoundException e){
+
+		} catch (IOException e) {
+
 		}
 		return libreta;
 
@@ -90,7 +94,7 @@ public class Interfaz {
 
 	}
 	private static void printHelp(){
-		String helpInfo = "\nEn nuestra Libreta puedes realizar las siguientes operaciones:\n" +
+		String helpInfo = "En nuestra Libreta puedes realizar las siguientes operaciones:\n" +
 				"\n---> 'add' para añadir un elemento a la libreta:\n" +
 				"       Usando como base estas intrucciones (id, reposteria, cliente, precio)\n" +
 				"---> 'delete' para eliminar un elemento a la libreta:\n" +
