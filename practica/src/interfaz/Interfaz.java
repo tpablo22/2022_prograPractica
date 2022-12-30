@@ -66,6 +66,7 @@ public class Interfaz {
 				"       Usando el id como intruccion para que se borre el elemento\n" +
 				"---> 'edit' para editar un elemento a la libreta:\n" +
 				"       Usando el id como intruccion para que se borre el elemento\n"+
+				"		despues se añade el nuevo elemento a la libreta (id, reposteria, cliente, precio)\n"
 				"---> 'help' para mostrar la guia de nuevo: \n" +
 				"---> 'generar' para eliminar un elemento a la libreta:\n"+
 				"---> 'exit' para salir de la libreta:\n";
