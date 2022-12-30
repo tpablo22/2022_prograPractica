@@ -11,6 +11,8 @@ public class Interfaz {
 
 	public static void perticionGuia(String guia, String remplazo) {
 		String[] linea = guia.split(" ");
+		String[] lineaRemplazo = guia.split(" ");
+
 		Libreta libreta = inicializarLibreta();
 
 		if (linea[0].equals("add")) {
