@@ -7,6 +7,12 @@ public class Pasteleria{
 	private String cliente;
 	private int precio;
 
+	public Pasteleria(int parseInt, String s, String s1, int parseInt1) {
+	}
+
+	public Pasteleria(int parseInt) {
+	}
+
 	public int getId(){
 
 		return id;
