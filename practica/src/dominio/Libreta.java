@@ -4,25 +4,25 @@ import java.util.ArrayList;
 
 public class Libreta{
 
-	private ArrayList<Pasteleria> pasteleria = new ArrayList<>();
+	private ArrayList<Pasteleria> pastelerias = new ArrayList<>();
 
-	public ArrayList<Pasteleria> getLibreta(){
-		return pasteleria;
+	public ArrayList<Pasteleria> getPasteleria(){
+		return pastelerias;
 	}
-	public void setLibreta(ArrayList<Pasteleria> libreta){
+	public void setPasteleria(ArrayList<Pasteleria> pastelerias){
 
-		this.pasteleria = libreta;
+		this.pastelerias = pastelerias;
 	}
-	public static void addPasteleria(Pasteleria libreta){
-		libreta.add(libreta);
+	public void addPasteleria(Pasteleria pasteleria){
+		pastelerias.add(pasteleria);
 	}
-	public void eliminarPasteleria(Pasteleria libreta){
-		libreta.remove(libreta);
+	public void eliminarPasteleria(Pasteleria pasteleria){
+		pastelerias.remove(pasteleria);
 	}
-	public void editarPasteleria(Pasteleria libreta, Pasteleria libreta2){
-		if(pasteleria.remove(libreta)) {
-			pasteleria.remove(libreta);
-			pasteleria.add(libreta2);
+	public void editarPasteleria(Pasteleria libreta, Pasteleria libreta1){
+		if(pastelerias.remove(libreta)) {
+			pastelerias.remove(libreta);
+			pastelerias.add(libreta1);
 		}else{
 			System.out.println("No se puede editar la libreta");
 
@@ -31,14 +31,17 @@ public class Libreta{
 		
 	public String toString(){
 		String mensaje = "";
-		for(int i = 0; i < pasteleria.size(); i++){
-			mensaje += pasteleria.get(i) + "\n";
+		for (int i = 0; i < pastelerias.size();i ++){
+			mensaje += pastelerias.get(i)+"\n";
 		}
+
 		return mensaje;
 	}
 	public String toCSV(){
 		StringBuilder mensaje = new StringBuilder();
-		for(Pasteleria libreta: pasteleria){
+		mensaje.append("id,Pasteleria,Cliente,Precio\n");
+		for(Pasteleria pasteleria: pastelerias){
+			mensaje.append(pasteleria.toCSV()+"\n");
 			
 		}
 		return mensaje.toString();
