@@ -1,14 +1,13 @@
 package dominio;
 
-public class Pasteleria{
+public class Pasteleria {
 
 	private int id;
 	private String reposteria;
-
 	private String sabor;
-
 	private String cliente;
 	private int precio;
+
 
 	public Pasteleria(int id, String reposteria, String sabor, String cliente, int precio) {
 		this.id = id;
@@ -17,87 +16,81 @@ public class Pasteleria{
 		this.cliente = cliente;
 		this.precio = precio;
 	}
-	public Pasteleria(){
+
+	public Pasteleria(int id) {
+		this.id = id;
+	}
+
+	public Pasteleria() {
 		this.id = 0;
-		this.reposteria = " ";
-		this.sabor = " ";
-		this.cliente = " ";
+		this.reposteria = "";
+		this.sabor = "";
+		this.cliente = "";
 		this.precio = 0;
 	}
 
 
-	public Pasteleria(int id){
-		this.id = id;
-	}
-
-
-	public int getId(){
-
+	public int getId() {
 		return id;
 	}
-	public void setId(int id){
 
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getReposteria(){
-
-		return reposteria;
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
 	}
-	public void setReposteria(String reposteria){
 
+	public String getCliente() {
+		return cliente;
+	}
+
+	public void setReposteria(String reposteria) {
 		this.reposteria = reposteria;
 	}
-	public String getSabor(){
-		return sabor;
+
+	public String getReposteria() {
+		return reposteria;
 	}
 
 	public void setSabor(String sabor) {
 		this.sabor = sabor;
 	}
 
-	public String getCliente(){
-
-		return cliente;
-	}
-	public void setCliente(String cliente){
-
-		this.cliente = cliente;
+	public String getSabor() {
+		return sabor;
 	}
 
-	public int getPrecio(){
-
-		return precio;
-	}
-	public void setPrecio(int precio){
-
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 
-	@Override
+	public int getPrecio() {
+		return precio;
+	}
+
+	public String toCSV() {
+		return " " + id + " " + reposteria + " " + sabor + " " + cliente + " " + precio + "€";
+	}
+
+
 	public boolean equals(Object obj) {
-		if(obj == this){
+		if (obj == this) {
 			return true;
 		}
 		if (obj instanceof Pasteleria) {
-			Pasteleria p = (Pasteleria) obj;
-			if (p.getId() == id) {
+			Pasteleria x = (Pasteleria) obj;
+			if (x.getId() == id) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public String toCSV(){
-		return " "+id + " " + reposteria + " "+sabor +" "+ cliente + " " + precio + "€";
+	public String toString() {
+		return " " + id + " " + reposteria + " " + sabor + " " + cliente + " " + precio;
+
+
 	}
-
-
-	public String toString(){
-
-		return id + reposteria + sabor + cliente + precio;
-	}
-
-
 }
-
