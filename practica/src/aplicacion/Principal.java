@@ -27,7 +27,7 @@ public class Principal{
 			}else if(sentencia.contains("edit")){
 				StringTokenizer st = new StringTokenizer(sentencia);
 				if(st.countTokens() == 6){
-					System.out.println("Que Producto quieres cambiar");
+					System.out.println("Que producto quieres cambiar");
 					sustitucion = sc.nextLine();
 				}
 			}
