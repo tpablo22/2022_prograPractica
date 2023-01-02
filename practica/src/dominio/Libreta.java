@@ -46,7 +46,7 @@ public class Libreta{
 	}
 	public String toCSV(){
 		StringBuilder mensaje = new StringBuilder();
-		mensaje.append("nombre,talla,color,precio\n");
+		mensaje.append("id,reposteria, cliente, sabor,precio\n");
 		for(Pasteleria pasteleria: pastelerias){
 			mensaje.append(pasteleria.toCSV() + "\n");
 		}
@@ -60,7 +60,7 @@ public class Libreta{
 			pastelerias.remove(pateleria);
 			pastelerias.add(sustituto);
 		}else{
-			System.out.println("No se puede editar porque no tenemos a esa zapatilla.");
+			System.out.println("No se puede editar el pedido.");
 		}
 	}
 
