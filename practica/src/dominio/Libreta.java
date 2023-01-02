@@ -5,14 +5,16 @@ import java.util.ArrayList;
 public class Libreta{
 
 	private ArrayList<Pasteleria> pastelerias = new ArrayList<>();
-
-	public ArrayList<Pasteleria> getPasteleria(){
+	public ArrayList<Pasteleria> getPastelerias(){
 		return pastelerias;
 	}
-	public void setPasteleria(ArrayList<Pasteleria> pastelerias){
 
+
+	public void setPastelerias(ArrayList<Pasteleria> pastelerias){
 		this.pastelerias = pastelerias;
 	}
+
+
 	public void addPasteleria(Pasteleria pasteleria){
 		pastelerias.add(pasteleria);
 	}
@@ -39,9 +41,9 @@ public class Libreta{
 	}
 	public String toCSV(){
 		StringBuilder mensaje = new StringBuilder();
-		mensaje.append("id,Pasteleria,Cliente,Precio\n");
-		for(Pasteleria pasteleria: pastelerias){
-			mensaje.append(pasteleria.toCSV()+"\n");
+		mensaje.append("id,Pasteleria,Sabor,Cliente,Precio\n");
+		for(Pasteleria past: pastelerias){
+			mensaje.append(past.toCSV()+"\n");
 			
 		}
 		return mensaje.toString();
